@@ -1,9 +1,29 @@
-const BiscuitCard = () => {
+import { Link } from 'react-router'
+
+
+import './BiscuitCard.css'
+
+
+
+const BiscuitCard = ({biscuit}) => {
+
+
+
     return (
-      <li>
-        <h3>Hello, I'm a biscuit!</h3>
-      </li>
-    );
-  };
+      <article className = 'card'>
+<Link to={`/biscuits/${biscuit._id}`}></Link>
+<div className= "row">
+<img src={biscuit.image} alt={`picture of ${biscuit.name}`}></img>
+
+<div className= "details">
+  <h2>{biscuit.description}</h2>
+</div>
+</div>
+
+
+      </article>
+   
+    )
+  }
   
-  export default BiscuitCard;
+  export default BiscuitCard

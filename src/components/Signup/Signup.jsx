@@ -1,14 +1,15 @@
-import {useState, useContext} from 'react'
+import {useState} from 'react'
+// import {useContext} from 'react'
 import { useNavigate} from 'react-router'
 import {signup} from '../../services/userService'
-import {setToken} from '../../utils/auth'
-import {getUserFromToken} from '../../utils/auth'
+// import {setToken} from '../../utils/auth'
+// import {getUserFromToken} from '../../utils/auth'
 import {UserContext} from '../../contexts/UserContext'
 
 
 import '../../App.css'
 export default function Signup() {
-    const {setUser} = useContext(UserContext)
+    // const {setUser} = useContext(UserContext)
 
   const [formData, setFormData] = useState({
     username:'',

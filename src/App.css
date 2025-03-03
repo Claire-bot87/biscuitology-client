@@ -270,3 +270,118 @@ html, body, #root {
     background-color: var(--brand-disabled);
     cursor: not-allowed;
   }
+
+
+
+  :root {
+    --bg-primary: #1b1b1b;
+    --bg-secondary: #313131;
+    --bg-tertiary: #858585;
+    --bg-accent: #0085f230;
+    --bg-info: #0085f21a;
+    --text-primary: #fff;
+    --text-secondary: #cdcdcd;
+    --text-link: #8cb4ff;
+    --border-primary: #cdcdcd;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-primary);
+  }
+  
+  body {
+    margin: 0;
+    background-color: var(--bg-primary);
+  }
+  
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  section {
+    margin: 0 0 2rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .header img {
+    width: 40px;
+  }
+  
+  .header img:nth-last-of-type(1){
+    width: 25px;
+  }
+  
+  .header button {
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .header div {
+    margin-bottom: 3px;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-secondary);
+  }
+  
+  
+  .feed button {
+    border: none;
+    text-align: unset;
+    color: unset;
+    background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+  }
+  
+  .noPosts {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .noPosts span {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    display: block;
+    font-weight: 800;
+  }
+  
+  .newPostButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--brand);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

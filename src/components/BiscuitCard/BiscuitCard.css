@@ -1,0 +1,95 @@
+.card {
+    padding: 1rem;
+  }
+  
+  .card {
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .card:hover {
+    background-color: var(--background-secondary);
+  }
+  
+  .card a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  
+  .card > a > div {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .card img {
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    margin-right: .5rem;
+  }
+  
+  .card h2 {
+    font-size: 1em;
+    margin-bottom: .5rem;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+  }
+  
+  .card h2 span {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+  
+  .card p:nth-of-type(1){
+    margin: 0 0 .5rem;
+    line-height: 1.3;
+    font-size: inherit;
+    letter-spacing: 0.2px;
+    font-weight: 300;
+  }
+  
+  .card p:nth-last-of-type(1){
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  .impressions {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0 -9px 0 35px;
+  }
+  
+  .impressions svg {
+    margin-right: .25rem;
+  }
+  
+  .impressions a svg, .impressions button:nth-last-of-type(1) svg {
+    margin-right: 0;
+  }
+  
+  .impressions a {
+    height: 21px;
+  }
+  
+  .impressions button {
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 6px 5px 5px;
+    margin: 0 4px;
+  }
+  
+  /* .impressions button:nth-last-of-type(1){
+    font-size: 2em;
+    letter-spacing: -1.5px;
+  } */
+  
+  .impressions button:hover {
+    background-color: var(--background-tertiary);
+  }
