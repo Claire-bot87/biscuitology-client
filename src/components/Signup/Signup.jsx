@@ -27,10 +27,11 @@ export default function Signup() {
         console.log('SIGNING UP')
         console.log((formData))
         try {
-            const data = await signup(formData)
+            // const data = 
+            await signup(formData)
            
-            setToken(data.token)
-            setUser(getUserFromToken())
+            //  setToken(data.token)
+            //  setUser(getUserFromToken())
             navigate('/')
         }catch(error){
             console.error(error)

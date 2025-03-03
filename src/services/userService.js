@@ -21,11 +21,13 @@ const BASE_URL = import.meta.env.VITE_API_URL
 
 export const signup = async (formData) => {
     try {
-      const res = await axios.post(BASE_URL + '/auth/signup/', formData, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const res = await axios.post(BASE_URL + '/auth/signup/', formData, 
+    //     {
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //   }
+    );
       console.log('Response Object:', res);
 
       // Log the response data (which should include the token)
@@ -37,3 +39,12 @@ export const signup = async (formData) => {
       throw error;
     }
   };
+
+  export const signin = async (formData) => {
+    try {
+        const res = await axios.post(BASE_URL + '/auth/signin/', formData)
+        return res.data
+    } catch (error) {
+        throw new error
+    }
+}
