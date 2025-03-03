@@ -1,0 +1,127 @@
+import {useState, useContext} from 'react'
+import { useNavigate} from 'react-router'
+import {signup} from '../../services/userService'
+import {setToken} from '../../utils/auth'
+import {getUserFromToken} from '../../utils/auth'
+import {UserContext} from '../../contexts/UserContext'
+
+
+import '../../App.css'
+export default function Signup() {
+    const {setUser} = useContext(UserContext)
+
+  const [formData, setFormData] = useState({
+    username:'',
+    email:'',
+    password:'',
+    password_confirmation:''
+  })
+
+    const [errors, setErrors] = useState({})
+
+     const navigate = useNavigate()
+
+    const handleSubmit = async (e) => {
+       
+     e.preventDefault()
+        console.log('SIGNING UP')
+        console.log((formData))
+        try {
+            const data = await signup(formData)
+           
+            setToken(data.token)
+            setUser(getUserFromToken())
+            navigate('/')
+        }catch(error){
+            console.error(error)
+            setErrors(error.response?.data?.errors || {})
+        }
+    }
+
+    const handleChange = (e) => {
+        setErrors({...errors,[e.target.name]:''})
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+
+return(
+    <section className ='container'>
+
+<h1>Signup</h1>
+<p>You are creating an account</p>
+
+<form onSubmit = {handleSubmit}>
+
+<div className="form-control">
+          <label htmlFor="username">Username</label>
+          <input 
+            type="text"
+            name="username" 
+            id="username"
+            placeholder="Enter a username"
+            required
+            onChange={handleChange}
+          />
+          { errors.username && <p className='error-message'>{errors.username}</p> }
+        </div>
+
+
+<div className="form-control">
+          <label htmlFor="email">Email</label>
+          <input 
+            type="email"
+            name="email" 
+            id="email"
+            placeholder="Enter an email address"
+            required
+            onChange={handleChange}
+          />
+          { errors.email && <p className='error-message'>{errors.email}</p> }
+        </div>
+
+<div className="form-control">
+          <label htmlFor="password">Password</label>
+          <input 
+            type="password"
+            name="password" 
+            id="password"
+            placeholder="Enter a password"
+            required
+            onChange={handleChange}
+          />
+        
+          { errors.password && <p className='error-message'>{errors.password}</p> }
+        </div>
+
+
+        <div className="form-control">
+          <label htmlFor="confirmPassword">Confirm password</label>
+          <input 
+            type="password"
+            name="password_confirmation" 
+            id="password_confirmation"
+            placeholder="Re-type the password"
+            required
+            onChange={handleChange}
+          />
+        {formData.password && formData.confirmPassword && formData.password !== formData.confirmPassword &&
+  <p className='error-message'>Passwords do not match</p>
+}
+        </div>
+
+
+<button 
+// disabled = {formData.password === '' || formData.password !== formData.confromPassword}
+ type='submit'> Submit </button>
+
+
+
+
+</form>
+
+
+
+
+    </section>
+)
+
+}
