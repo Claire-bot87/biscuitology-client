@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate, Link} from 'react-router'
 import { biscuitCreate } from '../../services/biscuitService'
+import { UserContext } from '../../contexts/UserContext'
 import './CreateBiscuit.css'
 
 
@@ -17,10 +18,17 @@ const [formData, setFormData] = useState({
     dunkability:4
 
 })
+const { user } = useContext(UserContext)
 
 const navigate = useNavigate()
 
 const [errors, setErrors] = useState({})
+
+useEffect(() => {
+    if(!user){
+      navigate('/signin')
+    }
+  }, [user, navigate])
 
 const handleSubmit = async(e) => {
     e.preventDefault()
@@ -31,7 +39,7 @@ const handleSubmit = async(e) => {
     //   console.log(jsonFormData)
 const data = await biscuitCreate(formData)
 console.log(data)
-// navigate(`/biscuits/${data._id}`)
+ navigate(`/biscuits/${data.id}`)
     }catch(error){
         
         console.log(error)

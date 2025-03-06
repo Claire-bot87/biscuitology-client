@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { UserContext } from '../../contexts/UserContext'
 import { useState, useEffect } from 'react'
 import { biscuitIndex } from '../../services/biscuitService'
 import BiscuitCard from '../BiscuitCard/BiscuitCard'
@@ -6,6 +8,8 @@ import '../../App.css'
 const AllBiscuits = () => {
 
 const [biscuits, setBiscuits]= useState ({})
+
+const { user } = useContext(UserContext)
 
 useEffect(() => {
 biscuitIndex()
@@ -17,8 +21,10 @@ biscuitIndex()
 
     return (
         <>
-        <h1>Biscuits</h1>
-<section className = 'feed'>
+        <div className = 'topdiv' ></div>
+   
+  <div className = 'biscuitContainer'>
+
 
     {biscuits.length > 0 
     ? biscuits.map(biscuit => <BiscuitCard key={biscuit._id} biscuit={biscuit} />)
@@ -26,8 +32,12 @@ biscuitIndex()
 
     }
 
-</section>
+
+</div>
+
+{ user &&
 <Link className='newPostButton' to='/biscuits/new'></Link>
+}
 </>
 
     )

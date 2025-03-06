@@ -67,7 +67,7 @@ return res.data
 
         // eslint-disable-next-line no-useless-catch
         try {
-            console.log(`BISCUIT ID ${biscuitId}`)
+            console.log(`BISCUIT ID IN SERVICE ${biscuitId}`)
             const res = await axios.delete(`${BASE_URL}/${biscuitId}/`,{
                 headers: {
                 Authorization: `Bearer ${getToken()}`,

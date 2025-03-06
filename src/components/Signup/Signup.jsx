@@ -33,7 +33,7 @@ export default function Signup() {
            
             //  setToken(data.token)
             //  setUser(getUserFromToken())
-            navigate('/')
+            navigate('/signin')
         }catch(error){
             console.error(error)
             setErrors(error.response?.data?.errors || {})

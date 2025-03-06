@@ -1,7 +1,21 @@
 #title {
-    display: flex;
     justify-content: space-around;
-    height: 100px ;
-    width: 100px ;
-    background-color:blue;
+    height: 100px;
+    width: 700px;
+    background-image: url(./sprinkles.gif);
+    position: relative;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+#title1 {
+    justify-content: space-around;
+    height: 100%; 
+    width: 100%; 
+    position: absolute; 
+    background-image: url(./biscuitology2.png);
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; 
 }

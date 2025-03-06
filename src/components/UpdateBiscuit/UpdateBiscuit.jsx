@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate, Link} from 'react-router'
 import { biscuitUpdate, biscuitShow } from '../../services/biscuitService'
+import { UserContext } from '../../contexts/UserContext'
 import './UpdateBiscuit.css'
 
 const UpdateBiscuit = () => {
 
 
+const { user } = useContext(UserContext)
 
 const [formData, setFormData] = useState({
     name:'',
@@ -18,24 +20,32 @@ const [formData, setFormData] = useState({
 
 })
 const [errors, setErrors] = useState({})
-//const navigate = useNavigate()
+const navigate = useNavigate()
 const { biscuitId } = useParams()
 
 useEffect(() => {
- 
-
+    console.log('THIS IS THE USER' + user)
+    console.log(JSON.stringify(user, null, 2))
+    if (!user) {
+        navigate('/signin')
+      }
+     
     biscuitShow(biscuitId)
+   
     .then(data => {
-      
+        if(data.user !== user.id){
+            navigate(`/biscuits/${biscuitId}`)
+          }
             setFormData(data)
     })
-}, [biscuitId])
+}, [biscuitId, navigate, user])
 
 const handleSubmit = async (e) => {
     e.preventDefault()
     try {
         const updatedBiscuit = await biscuitUpdate(biscuitId, formData)
         console.log(updatedBiscuit)
+        navigate(`/biscuits/${updatedBiscuit.id}`)
     }catch(error){
         setErrors(error.response?.data?.errors || {})
     }
