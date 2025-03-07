@@ -1,4 +1,5 @@
 import axios from 'axios'
+import './ImageUpload.css'
 
 export default function ImageUpload({ errors, formData, setFormData, isUploading, setIsUploading }) {
 
@@ -22,7 +23,10 @@ upload_preset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
     return(
         <div className='form-control'>
             <label htmlFor='name'>image</label>
-            {formData.image && <img src ={formData.image} alt = 'preview of biscuit image' />}
+
+            {formData.image && (<div className="upload-image" style={{ maxWidth: '200px', maxHeight: '200px', overflow: 'hidden' }}>
+                <img src={formData.image} alt='preview of biscuit image' style={{ width: '100%', height: 'auto' }} />
+            </div>)}
             <input
             type="file"
             accept="image/*"

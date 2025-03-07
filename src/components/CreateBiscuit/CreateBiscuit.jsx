@@ -67,7 +67,7 @@ return (
     {/* name */}
 <div className='form-control'>
         <label htmlFor='name'>name</label>
-        <textarea
+        <textarea className ="input"
         name='name'
         id='name'
         placeholder='add biscuit name'
@@ -82,7 +82,7 @@ return (
 {/* description */}
         <div className='form-control'>
         <label htmlFor='name'>description</label>
-        <textarea
+        <textarea className ="input"
         name='description'
         id='description'
         placeholder='add add description'
@@ -100,7 +100,7 @@ return (
         {/* type */}
         <div className='form-control'>
         <label htmlFor='name'>type</label>
-        <textarea
+        <textarea className ="input"
         name='type'
         id='type'
         placeholder='add a type'

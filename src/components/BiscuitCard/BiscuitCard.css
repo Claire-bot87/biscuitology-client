@@ -94,14 +94,70 @@
   }
 
   .biscuit-card {
-    width: 300px; /* Standard size */
+    width: 300px; 
     height: auto;
     margin: 10px;
   }
   
   .biscuit-card-large {
-    width: 80vw; /* Makes the card fill most of the screen width */
+    width: 80vw; 
     height: auto;
     margin: 20px;
     font-size: x-large;
+  }
+
+
+  .look {
+
+    background-image: url(./eye.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    margin:auto;
+  }
+
+
+  .back {
+
+    background-image: url(./back.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    margin:auto;
+  }
+
+
+  .pencil {
+
+    background-image: url(./pencil.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    margin:0px 60px 0px 400px;
+  }
+
+  .garbage {
+
+    background-image: url(./garbage.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    margin:0px 60px 0px 220px;
+  }
+
+  .pencil-garbage-wrapper
+  {
+    display:flex;
   }

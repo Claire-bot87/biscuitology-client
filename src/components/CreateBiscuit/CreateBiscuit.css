@@ -70,3 +70,8 @@
   .container form a {
     background-color: var(--background-tertiary);
   }
+
+
+.input{
+  color:#5e17eb!important;
+      }

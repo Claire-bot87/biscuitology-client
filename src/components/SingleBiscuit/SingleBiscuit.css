@@ -28,3 +28,10 @@
     font-weight: 500;
     color: var(--text-secondary);
   }
+
+  
+  .space {
+    width:1000px;
+    height:100px;
+    font-style: italic;
+  }

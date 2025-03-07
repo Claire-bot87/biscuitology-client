@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { biscuitIndex } from '../../services/biscuitService'
 import BiscuitCard from '../BiscuitCard/BiscuitCard'
 import { Link } from 'react-router'
+import './AllBiscuits.css'
 import '../../App.css'
 const AllBiscuits = () => {
 
@@ -36,7 +37,8 @@ biscuitIndex()
 </div>
 
 { user &&
-<Link className='newPostButton' to='/biscuits/new'></Link>
+<Link to='/biscuits/new'>
+<div className="new-biscuit"></div></Link>
 }
 </>
 

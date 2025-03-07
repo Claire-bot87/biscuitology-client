@@ -46,16 +46,17 @@ export default function Signup() {
     }
 
 return(
+  <section className='container-box'>
     <section className ='container'>
 
 <h1>Signup</h1>
-<p>You are creating an account</p>
+<p className="signup">You are creating an account</p>
 
-<form onSubmit = {handleSubmit}>
+<form onSubmit = {handleSubmit} >
 
 <div className="form-control">
           <label htmlFor="username">Username</label>
-          <input 
+          <input className="input"
             type="text"
             name="username" 
             id="username"
@@ -69,7 +70,7 @@ return(
 
 <div className="form-control">
           <label htmlFor="email">Email</label>
-          <input 
+          <input className="input"
             type="email"
             name="email" 
             id="email"
@@ -82,7 +83,7 @@ return(
 
 <div className="form-control">
           <label htmlFor="password">Password</label>
-          <input 
+          <input className="input"
             type="password"
             name="password" 
             id="password"
@@ -97,7 +98,7 @@ return(
 
         <div className="form-control">
           <label htmlFor="confirmPassword">Confirm password</label>
-          <input 
+          <input className="input"
             type="password"
             name="password_confirmation" 
             id="password_confirmation"
@@ -123,6 +124,7 @@ return(
 
 
 
+    </section>
     </section>
 )
 

@@ -1,0 +1,23 @@
+.new-biscuit {
+   
+        background-image: url(./plus.png);
+        width: 40px;
+        height: 40px;
+        background-size: contain; 
+        background-position: center;
+        background-repeat: no-repeat;
+        justify-content: center;
+        margin:0px 60px 0px 220px;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: var(--brand);
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+

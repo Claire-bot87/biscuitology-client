@@ -103,7 +103,7 @@ export default function Signin(){
         {/* Username */}
         <div className="form-control">
           <label htmlFor="username">Username</label>
-          <input 
+          <input className="input"
             type="text"
             name="username" 
             id="username"
@@ -117,7 +117,7 @@ export default function Signin(){
         {/* Password */}
         <div className="form-control">
           <label htmlFor="password">Password</label>
-          <input 
+          <input className="input"
             type="password"
             name="password" 
             id="password"

@@ -113,7 +113,8 @@ html, body, #root {
     display: flex;
     flex-direction:column;
     justify-content: center;
-    margin: 0px, 100px, 0px, 100px;
+    margin: 0px 100px 0px 320px;
+    width:600px;
   }
   
   .container h1 {
@@ -353,3 +354,29 @@ html, body, #root {
     width:1000px
   }
 
+
+  .form-control {
+    margin: 0px, 100px, 0px, 100px;
+  
+  }
+  .input::placeholder{
+  color:#5e17eb!important;
+  }
+
+  
+
+  .input{
+  color:#5e17eb!important;
+      }
+
+  .signup{
+        color:#5e17eb!important;
+            }
+
+
+  container-box{
+              display:flex;
+              justify-content: center;
+            }
+
+            
