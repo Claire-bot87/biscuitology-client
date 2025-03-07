@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link} from 'react-router'
 import { biscuitCreate } from '../../services/biscuitService'
 import { UserContext } from '../../contexts/UserContext'
 import './CreateBiscuit.css'
+import ImageUpload from '../ImageUpload/ImageUpload'
 
 
 
@@ -15,9 +16,13 @@ const [formData, setFormData] = useState({
     image:'',
     taste:1,
     texture:2,
-    dunkability:4
+    dunkability:4,
+    
 
 })
+
+const [isUploading, setIsUploading] = useState(false)
+
 const { user } = useContext(UserContext)
 
 const navigate = useNavigate()
@@ -108,22 +113,16 @@ return (
         </div>
 
 {/* image */}
-<div className='form-control'>
-        <label htmlFor='name'>image</label>
-        <textarea
-        name='image'
-        id='image'
-        placeholder='add an image'
-        value={formData.image}
-        onChange={handleChange}
-        required
-        >
-
-        </textarea>
-        </div>
+<ImageUpload 
+            errors={errors} 
+            formData={formData} 
+            setFormData={setFormData}
+            isUploading={isUploading}
+            setIsUploading={setIsUploading}
+            />
         <div className='button-group'>
             <Link to='/'>Cancel</Link>
-            <button type='submit' disabled={formData.name ===''}>Create</button>
+            <button type='submit' disabled={formData.name ===''|| isUploading }>Create</button>
 </div>
     </form>
     </section>
