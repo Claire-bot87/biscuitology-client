@@ -10,7 +10,7 @@ import AllBiscuits from './components/AllBiscuits/AllBiscuits.jsx'
 import SingleBiscuit from './components/SingleBiscuit/SingleBiscuit.jsx'
 import CreateBiscuit from './components/CreateBiscuit/CreateBiscuit.jsx'
 import UpdateBiscuit from './components/UpdateBiscuit/UpdateBiscuit.jsx'
-
+import Metrics from './components/Metrics/Metrics.jsx'
 
 const App = () => {
   return (
@@ -31,6 +31,7 @@ const App = () => {
       <Route path="/biscuits/new" element={<CreateBiscuit />}/>
       <Route path="/biscuits/:biscuitId/edit" element={<UpdateBiscuit />}/>
       <Route path="/biscuits/" element={<AllBiscuits />}/>
+      <Route path="/metrics/" element={<Metrics />}/>
       </Routes>
 
       </main>
