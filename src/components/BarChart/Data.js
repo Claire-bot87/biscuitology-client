@@ -3,27 +3,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const barChartData = { 
 labels: [
 'HobNob',
