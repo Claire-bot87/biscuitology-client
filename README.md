@@ -57,7 +57,9 @@ Styling.
 
 ## Planning
 https://trello.com/b/ZW24K6LD/biscuitology
+![Wireframe 1] (https://res.cloudinary.com/dpv0j8frj/image/upload/v1743422242/Screenshot_2025-03-31_at_12.54.22_gwq4ob.png)
 
+![Wireframe 2] (https://res.cloudinary.com/dpv0j8frj/image/upload/v1743422242/Screenshot_2025-03-31_at_12.54.42_wnucnw.png)
 
 ## Build Process
 
@@ -70,7 +72,7 @@ Then I added into each of these applications:
 - Models (for the schemas)
 - Views (handles the logic)
 - Urls (routing)
-- 
+  
 Once I had completed these and tested them using Postman, I moved onto the front end. I created components , And placed them in my app.jsx file, which i imported into my Main.jsx file
 I created a UserContext using React's prebuilt createContext. The conext had a UserProvider which I wrapped around the whole app in mian .jsx. This menat that all the components had access to the user data, and so I would not need to pass the data down as props repeatedly in each component that required the user data.
 I also added BrowserRouter (a prebuilt component provided by react-router) which enavbeles client side routing throughout the app.
@@ -79,9 +81,9 @@ I enabled the user to add, delete and update a biscuit, ensuring my application 
 
 Here is one in-depth example of that CRUD functionality. I have cjhosen just to focus of a POST request, for brevity:
 
-###Adding a biscuit: 
+### Adding a biscuit: 
 
-####Created a form 
+#### Created a form 
 Used UseState to update the field as the user types into the form.
 
 ```.js
