@@ -57,9 +57,9 @@ Styling.
 
 ## Planning
 https://trello.com/b/ZW24K6LD/biscuitology
-![Wireframe 1] (https://res.cloudinary.com/dpv0j8frj/image/upload/v1743422242/Screenshot_2025-03-31_at_12.54.22_gwq4ob.png)
+![Wireframe 1](https://res.cloudinary.com/dpv0j8frj/image/upload/v1743422242/Screenshot_2025-03-31_at_12.54.22_gwq4ob.png)
 
-![Wireframe 2] (https://res.cloudinary.com/dpv0j8frj/image/upload/v1743422242/Screenshot_2025-03-31_at_12.54.42_wnucnw.png)
+![Wireframe 2](https://res.cloudinary.com/dpv0j8frj/image/upload/v1743422242/Screenshot_2025-03-31_at_12.54.42_wnucnw.png)
 
 ## Build Process
 
