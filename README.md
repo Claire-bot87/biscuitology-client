@@ -59,12 +59,6 @@ Styling.
 https://trello.com/b/ZW24K6LD/biscuitology
 
 
-### Styling
-
-
-### Finding a dataset
-
-
 ## Build Process
 
 First I built out the back end. I added: I added three applications in my project. They were 
