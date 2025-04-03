@@ -21,7 +21,7 @@ const handleDelete = async () => {
   const confirmDelete = window.confirm('Are you sure you want to delete this post?')
   if (confirmDelete) {
     try {
-      console.log('BISCUIT ID IN HANDLEDELETE' + biscuit.id)
+      console.log('BISCUIT ID IN HANDLE DELETE' + biscuit.id)
       await biscuitDelete(biscuit.id)
       navigate('/biscuits/')
     // eslint-disable-next-line no-unused-vars
@@ -68,19 +68,25 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 
 {user?.id === biscuit.user && isSingleBiscuitPage && (
 <div className='pencil-garbage-wrapper'>
-<Link to={`/biscuits/${biscuit.id}/edit`}> 
-<div className="pencil"></div>
-</Link>
-          
 <div className="garbage" onClick={handleDelete}></div>
+{/* <Link to={`/biscuits/${biscuit.id}/edit`}> 
+<div className="pencil"></div>
+</Link> */}
+<Link to={`/biscuits/${biscuit.id}/rating`}> 
+<div className="rating"></div>
+</Link>      
+{/* <div className="garbage" onClick={handleDelete}></div> */}
 </div>
 )} 
 
 {isSingleBiscuitPage && (
+  
 <Link to="/">  
 <div className='back'>
 </div>
 </Link>
+ 
+
 )}
 {isHomepage && (
   <Link to={`/biscuits/${biscuit.id}`}>

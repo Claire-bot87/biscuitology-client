@@ -34,26 +34,48 @@ export const BarChart = () => {
         datasets: [],
     });
 
+    // useEffect(() => {
+    //     biscuitIndex()
+    //     // .then(data => data.json())
+    //     .then((data) => {
+    //         console.log(`DATA ${data}`)
+    //         const formattedData = {
+                
+    //             labels: data.map(item => item.name),
+    //             datasets:[{
+    //                 label:'your dataset',
+    //                 data: data.map(item => item.texture),
+    //                 backgroundColor: data.map((_, index) => colours[index % colours.length]),
+    //                 borderColor: "rgba(75, 192, 192, 1)",
+    //                 borderWidth: 1,
+    //             },
+    //         ],
+    //       };
+    //       setBarChartData(formattedData);
+    //     })
+    //     .catch((error) => console.error("Error fetching data:", error));
+    // }, []);
+
     useEffect(() => {
         biscuitIndex()
-        // .then(data => data.json())
-        .then((data) => {
-            console.log(`DATA ${data}`)
-            const formattedData = {
+            .then((data) => {
+                console.log(`DATA FOR PIE CHART ${JSON.stringify(data)}`);
                 
-                labels: data.map(item => item.name),
-                datasets:[{
-                    label:'your dataset',
-                    data: data.map(item => item.texture),
-                    backgroundColor: data.map((_, index) => colours[index % colours.length]),
-                    borderColor: "rgba(75, 192, 192, 1)",
-                    borderWidth: 1,
-                },
-            ],
-          };
-          setBarChartData(formattedData);
-        })
-        .catch((error) => console.error("Error fetching data:", error));
+                const formattedData = {
+                    labels: data.map(item => item.name),
+                    datasets: [{
+                        label: 'Dunkability Sum',
+                        // Calculate the sum of dunkability values for each item
+                        data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)), 
+                        backgroundColor: data.map((_, index) => colours[index % colours.length]),
+                        borderColor: "rgba(75, 192, 192, 1)",
+                        borderWidth: 1,
+                    }],
+                };
+    
+                setBarChartData(formattedData);
+            })
+            .catch((error) => console.error("Error fetching data:", error));
     }, []);
 const options = {}
 return <Bar options={options} data={barChartData} />

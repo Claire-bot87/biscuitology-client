@@ -145,6 +145,18 @@
     margin:0px 60px 0px 400px;
   }
 
+  .rating {
+
+    background-image: url(./rating.png);
+    width: 40px;
+    height: 40px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    margin:0px 60px 0px 400px;
+  }
+
   .garbage {
 
     background-image: url(./garbage.png);
@@ -160,4 +172,5 @@
   .pencil-garbage-wrapper
   {
     display:flex;
+    justify-content: center;
   }
