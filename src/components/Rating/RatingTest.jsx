@@ -158,14 +158,14 @@ const handleSubmit = async (e) => {
     handleAddNew()
     setTimeout(async () => {
         console.log("Final submission data:", submissionData)
-    // try {
+    try {
         
-    //     console.log(`SUBMISSION DATA ${submissionData.taste}`)
-    //             const updatedBiscuit = await biscuitUpdate(biscuitId, submissionData)
-    //             navigate(`/biscuits/${updatedBiscuit.id}`);
-    //         } catch (error) {
-    //             setErrors(error.response?.data?.errors || {});
-    //         }
+        console.log(`SUBMISSION DATA ${submissionData.taste}`)
+                const updatedBiscuit = await biscuitUpdate(biscuitId, submissionData)
+                navigate(`/biscuits/${updatedBiscuit.id}`);
+            } catch (error) {
+                setErrors(error.response?.data?.errors || {});
+            }
         }, 500)
         }
 
