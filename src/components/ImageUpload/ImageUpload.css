@@ -3,3 +3,10 @@
     width:150px;
     height:150px;
 }
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}

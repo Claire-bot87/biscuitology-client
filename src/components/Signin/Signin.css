@@ -104,6 +104,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 5px;
+    width: 100%;
   }
   .button:hover {
     background-color: var(--brand-hover);
@@ -112,3 +113,16 @@
     background-color: var(--brand-disabled);
     cursor: not-allowed;
   }
+
+  /* no-account-button{
+    display: block;
+    padding: .5rem 1rem;
+    color: var(--text-primary);
+    border-radius: 8px;
+    border: none;
+    height: 35px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 50%;
+  } */

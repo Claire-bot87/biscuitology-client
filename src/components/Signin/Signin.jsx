@@ -144,7 +144,7 @@ export default function Signin(){
       </form>
 
 
-      <button onClick={() => navigate('/signup')} className='button'>Don't have an account yet? Sign up here!</button>
+      <button onClick={() => navigate('/signup')} className='no-account-button'>Don't have an account yet? Sign up here!</button>
     </section>
   )
 }

@@ -25,7 +25,7 @@ upload_preset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
             <label htmlFor='name'>image</label>
 
             {formData.image && (<div className="upload-image" style={{ maxWidth: '200px', maxHeight: '200px', overflow: 'hidden' }}>
-                <img src={formData.image} alt='preview of biscuit image' style={{ width: '100%', height: 'auto' }} />
+                <img src={formData.image} alt='preview of biscuit image' style={{ width: '100%', height: 'auto' }} className='image-preview' />
             </div>)}
             <input
             type="file"
