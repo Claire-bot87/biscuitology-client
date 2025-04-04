@@ -30,6 +30,7 @@ const [formData, setFormData] = useState({
     texture: [0],
     dunkability: [0],
 })
+
 const [submissionData, setSubmissionData] = useState({
     name: '',
     description: '',
@@ -40,15 +41,6 @@ const [submissionData, setSubmissionData] = useState({
     dunkability: [3],
 })
 
-// const [previousData, setPreviousData] = useState({
-//     name: '',
-//     description: '',
-//     type: '',
-//     image: '',
-//     taste: [0],
-//     texture: [0],
-//     dunkability: [0],
-// })
 
 //** useEffect
 useEffect(() => {
@@ -108,9 +100,9 @@ const handleAddNew = (e) => {
             description: formData.description,
             type: formData.type,
             image: formData.image,
-            taste: [...(data.taste ? data.taste : [0]), ...formData.taste], // concatenate the array
-            texture: [...(data.texture ? data.texture : [0]), ...formData.texture], // concatenate the array
-            dunkability: [...(data.dunkability ? data.dunkability : [0]), ...formData.dunkability], // concatenate the array
+            taste: [...(data.taste ? data.taste : 0), ...formData.taste], // concatenate the array
+            texture: [...(data.texture ? data.texture : 0), ...formData.texture], // concatenate the array
+            dunkability: [...(data.dunkability ? data.dunkability : 0), ...formData.dunkability], // concatenate the array
         });
 
         // You can log the updated submission data here, if needed.
