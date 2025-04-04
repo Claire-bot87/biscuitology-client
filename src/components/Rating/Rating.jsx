@@ -1,100 +1,147 @@
-import { useState, useEffect, useContext } from 'react';
-import { useParams, useNavigate, Link } from 'react-router';
-import { biscuitUpdate, biscuitShow } from '../../services/biscuitService';
-import { UserContext } from '../../contexts/UserContext';
+import { useState, useEffect, useContext } from 'react'
+import { useParams, useNavigate, Link } from 'react-router'
+import { biscuitUpdate, biscuitShow } from '../../services/biscuitService'
+import { UserContext } from '../../contexts/UserContext'
+
 
 const RateBiscuit = () => {
-    const { user } = useContext(UserContext);
-    const [formData, setFormData] = useState({
-        name: '',
-        description: '',
-        type: '',
-        image: '',
-        taste: [0],
-        texture: [0],
-        dunkability: [0],
-    });
 
-    const [oldData, setOldData] = useState({
-        name: '',
-        description: '',
-        type: '',
-        image: '',
-        taste: [0],
-        texture: [0],
-        dunkability: [0],
-    });
+//** Variables
+const fields = [
+    { name: 'taste', label: 'Taste', min: 1, max: 5 },
+    { name: 'texture', label: 'Texture', min: 1, max: 5 },
+    { name: 'dunkability', label: 'Dunkability', min: 1, max: 5 },
+]
 
-    const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
-    const { biscuitId } = useParams();
+//** Hooks (except useState and useEffect)
+const navigate = useNavigate()
+const { biscuitId } = useParams()
+const { user } = useContext(UserContext)
 
-    useEffect(() => {
-        if (!user) {
-            navigate('/signin');
-        }
+//** useState
+const [errors, setErrors] = useState({})
+ 
+const [formData, setFormData] = useState({
+    name: '',
+    description: '',
+    type: '',
+    image: '',
+    taste: [0],
+    texture: [0],
+    dunkability: [0],
+})
 
-        biscuitShow(biscuitId)
+const [submissionData, setSubmissionData] = useState({
+    name: '',
+    description: '',
+    type: '',
+    image: '',
+    taste: [3],
+    texture: [3],
+    dunkability: [3],
+})
+
+
+//** useEffect
+useEffect(() => {
+if (!user) {
+    navigate('/signin')
+}
+biscuitShow(biscuitId)
             .then((data) => {
                 if (data.user !== user.id) {
                     navigate(`/biscuits/${biscuitId}`);
                 }
-                setFormData(prevData => ({
-                    ...prevData,
-                    name: data.name,
-                    description: data.description,
-                    type: data.type,
-                    image: data.image,
-                  }));
-            });
-    }, [biscuitId, navigate, user]);
+setFormData({
+    name: data.name,
+    description: data.description,
+    type: data.type,
+    image: data.image,
+    taste: 
+    //data.taste ? [data.taste] :
+    [0], // Ensuring it's an array
+    texture:
+    //data.texture ? [data.texture] :
+    [0],
+    dunkability:
+    //data.dunkability ? [data.dunkability] :
+    [0],
+})
+});
+}, [biscuitId, navigate, user])
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-                 console.log("Calling biscuitShow");
-        biscuitShow(biscuitId)
-            .then((data) => {
-                // Correct way to update oldData
-                setOldData((prevOldData) => [...prevOldData, data]);
-                console.log(`NEW DATA ADDED:`, data); // Log the new data directly
-            });
 
-            // Send the updated ratings back to the server
-            const updatedFormData = { ...formData, oldData };
-            const updatedBiscuit = await biscuitUpdate(biscuitId, updatedFormData);
-            navigate(`/biscuits/${updatedBiscuit.id}`);
-        } catch (error) {
-            setErrors(error.response?.data?.errors || {});
+
+
+//** Functions for handling interactions */
+
+const handleChange = (e) => {
+ 
+setErrors({ ...errors, [e.target.name]: '' })
+setFormData({
+    ...formData,
+    [e.target.name]: [Number(e.target.value)] 
+})
+console.log(`FORM DATA ${formData.name}`)
+console.log(`FORM DATA texture ${formData.texture}`)
+}
+
+
+
+
+const handleAddNew = (e) => {
+    biscuitShow(biscuitId)
+    .then((data) => {  
+        console.log(`DATA FOR PREVIOUS DATA ${data.texture}`);
+        console.log(`FORM DATA WITHIN HANDLENEW ${formData.taste}`);
+
+        setSubmissionData({
+            name: formData.name,
+            description: formData.description,
+            type: formData.type,
+            image: formData.image,
+            taste: [...(data.taste ? data.taste : 0), ...formData.taste], // concatenate the array
+            texture: [...(data.texture ? data.texture : 0), ...formData.texture], // concatenate the array
+            dunkability: [...(data.dunkability ? data.dunkability : 0), ...formData.dunkability], // concatenate the array
+        });
+
+        // You can log the updated submission data here, if needed.
+        console.log(`SUBMISSION DATA TEXTURE ${submissionData.texture}`);
+    });
+}
+
+
+
+
+
+
+
+
+
+const handleSubmit = async (e) => {
+    
+    e.preventDefault();
+    handleAddNew()
+    setTimeout(async () => {
+        console.log("Final submission data:", submissionData)
+    try {
+        
+        console.log(`SUBMISSION DATA ${submissionData.taste}`)
+                const updatedBiscuit = await biscuitUpdate(biscuitId, submissionData)
+                navigate(`/biscuits/${updatedBiscuit.id}`);
+            } catch (error) {
+                setErrors(error.response?.data?.errors || {});
+            }
+        }, 500)
         }
-    };
 
-    const handleChange = (e) => {
-        setErrors({ ...errors, [e.target.name]: '' });
-        // const updatedValue = parseInt(e.target.value, 10) || 0;
 
-        setFormData({ ...formData, [e.target.name]: e.target.value })
 
-        // setFormData((prevState) => {
-        //     // Add the new rating to the array (taste, texture, dunkability)
-        //     return {
-        //         ...prevState,
-        //         [e.target.name]: [...prevState[e.target.name], updatedValue],
-        //     };
-        // }
-    // );
-    };
-
-    const fields = [
-        { name: 'taste', label: 'Taste', min: 1, max: 5 },
-        { name: 'texture', label: 'Texture', min: 1, max: 5 },
-        { name: 'dunkability', label: 'Dunkability', min: 1, max: 5 },
-    ];
 
     return (
-        <section>
+ <section>
             <section className='container'>
-                <h1>Rate Biscuit</h1>
+                <h1>Rate Biscuit TEST</h1>
                 <form onSubmit={handleSubmit}>
                     {/* Dynamic Fields for Taste, Texture, Dunkability */}
                     {fields.map((field) => (
@@ -108,7 +155,9 @@ const RateBiscuit = () => {
                                 id={field.name}
                                 min={field.min}
                                 max={field.max}
-                                value={formData[field.name][formData[field.name].length - 1] || ""}
+                                value={formData[field.name][0]
+                                  
+                                    || ""}
                                 onChange={handleChange}
                                 required
                             />
@@ -123,7 +172,8 @@ const RateBiscuit = () => {
                 </form>
             </section>
         </section>
-    );
-};
+    )
+}
 
-export default RateBiscuit;
+
+    export default RateBiscuit
