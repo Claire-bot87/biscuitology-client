@@ -140,6 +140,42 @@ console.log(data)
 
 ## Wins
 Adding metrics and graphs was a win in this project.
+Here i was setting state and state was an object, i wanted to update a particular property on the object.Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
+
+So i:
+Accessed the properties using dot notation
+Used the spread operator to copy the properties, avoiding mutations
+Checked that the property from the form data array had pulled through correctly using(if the biscuit hadn’t been rate yet , just use ‘0’)
+Then concatenated the two numbers with a comma.
+And wrapped it in straight brackets to create an array.
+
+``.js
+    setSubmissionData({
+            name: formData.name,
+            description: formData.description,
+            type: formData.type,
+            image: formData.image,
+            taste: [...(data.taste ? data.taste : 0), ...formData.taste]
+            texture: [...(data.texture ? data.texture : 0), ...formData.texture], // concatenate the array
+            dunkability: [...(data.dunkability ? data.dunkability : 0), ...formData.dunkability], // concatenate the array
+``
+
+So then I stored this in the database using a PUT request.
+So every biscuit array has an array of numbers on the dunkalibility property, for example. 
+
+So I used a PieChart to display the dunkability ratings. `so in my Piechart component , i needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then map through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one 1 number, by adding them together.
+The value in stored in ‘sum’,which starts at zero,  then you loop through and add the next value to ‘sum’.
+
+
+		
+
+``.js
+const formattedData = {
+                    labels: data.map(item => item.name),
+                    datasets: [{
+                        label: 'Dunkability Sum',
+data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)),
+``
 
 ## Key Learnings
 
