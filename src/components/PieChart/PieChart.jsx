@@ -29,13 +29,13 @@ export const PieChart = () => {
     })
     
 
-    const handleSumRatings = async (e) => {
-        biscuitIndex()
-        .then((data) => {
-            biscuitArray =  data
-            console.log(`BISCUIT ARRAY IS ${biscuitArray}`)
-        })
-        }
+    // const handleSumRatings = async (e) => {
+    //     biscuitIndex()
+    //     .then((data) => {
+    //         biscuitArray =  data
+    //         console.log(`BISCUIT ARRAY IS ${biscuitArray}`)
+    //     })
+    //     }
     
     // useEffect(() => {
     

@@ -1,5 +1,6 @@
 import BarChart from '../../components/BarChart/BarChart.jsx'
 import PieChart from '../../components/PieChart/PieChart.jsx'
+import DoughnutChart from '../../components/DoughnutChart/DoughnutChart.jsx'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useState } from 'react'
@@ -26,11 +27,12 @@ export default function Metrics(){
               <Dropdown.Menu>
                 <Dropdown.Item eventKey="Texture">Texture</Dropdown.Item>
                 <Dropdown.Item eventKey="Dunkability">Dunkability</Dropdown.Item>
-              </Dropdown.Menu>
+                <Dropdown.Item eventKey="Taste">Taste</Dropdown.Item>              </Dropdown.Menu>
             </Dropdown>
       
             {selectedOption === 'Texture' &&  <BarChart/>}
             {selectedOption === 'Dunkability' &&  <PieChart/>}
+            {selectedOption === 'Taste' &&  <DoughnutChart/>}
           </div>
         );
       }
