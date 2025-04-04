@@ -30,15 +30,14 @@ const [formData, setFormData] = useState({
     texture: [0],
     dunkability: [0],
 })
-
 const [submissionData, setSubmissionData] = useState({
     name: '',
     description: '',
     type: '',
     image: '',
-    taste: [0],
-    texture: [0],
-    dunkability: [0],
+    taste: [3],
+    texture: [3],
+    dunkability: [3],
 })
 
 // const [previousData, setPreviousData] = useState({
@@ -67,13 +66,13 @@ setFormData({
     type: data.type,
     image: data.image,
     taste: 
-    //data.taste ? [data.taste] : 
+    //data.taste ? [data.taste] :
     [0], // Ensuring it's an array
-    texture: 
+    texture:
     //data.texture ? [data.texture] :
     [0],
-    dunkability: 
-    //data.dunkability ? [data.dunkability] : 
+    dunkability:
+    //data.dunkability ? [data.dunkability] :
     [0],
 })
 });
@@ -96,48 +95,14 @@ console.log(`FORM DATA texture ${formData.texture}`)
 }
 
 
-// const handleAddNew = (e) => {
-//     biscuitShow(biscuitId)
-//     .then((data) => {  
-//         console.log(`DATA FOR PREVIOUS DATA ${data.texture}`)
-// setPreviousData({
-//     name: data.name,
-//     description: data.description,
-//     type: data.type,
-//     image: data.image,
-//     taste: data.taste ? [data.taste] : [0], // Ensuring it's an array
-//     texture: data.texture ? [data.texture] : [0],
-//     dunkability: data.dunkability ? [data.dunkability] : [0],
-// })})
-// console.log(`PREVIOUS DATA TEXTURE${previousData.texture}`)
-//     setSubmissionData({
-//         name: formData.name,
-//         description: formData.description,
-//         type: formData.type,
-//         image: formData.image,
-//         taste: [...previousData.taste, ...formData.taste], // concatenate the array
-//         texture: [...previousData.texture, ...formData.texture], // concatenate the array
-//         dunkability: [...previousData.dunkability, ...formData.dunkability], // concatenate the array
-//       });
-// }
+
 
 const handleAddNew = (e) => {
     biscuitShow(biscuitId)
     .then((data) => {  
         console.log(`DATA FOR PREVIOUS DATA ${data.texture}`);
+        console.log(`FORM DATA WITHIN HANDLENEW ${formData.taste}`);
 
-        // Update previous data here
-        // setPreviousData({
-        //     name: data.name,
-        //     description: data.description,
-        //     type: data.type,
-        //     image: data.image,
-        //     taste: data.taste ? [data.taste] : [0], // Ensuring it's an array
-        //     texture: data.texture ? [data.texture] : [0],
-        //     dunkability: data.dunkability ? [data.dunkability] : [0],
-        // });
-
-        // Use the 'data' from the promise directly for submission
         setSubmissionData({
             name: formData.name,
             description: formData.description,
@@ -147,14 +112,23 @@ const handleAddNew = (e) => {
             texture: [...(data.texture ? data.texture : [0]), ...formData.texture], // concatenate the array
             dunkability: [...(data.dunkability ? data.dunkability : [0]), ...formData.dunkability], // concatenate the array
         });
-        console.log(`SUBMISSION DATA TEXTURE ${submissionData.texture}`)
+
+        // You can log the updated submission data here, if needed.
+        console.log(`SUBMISSION DATA TEXTURE ${submissionData.texture}`);
     });
 }
 
 
+
+
+
+
+
+
+
 const handleSubmit = async (e) => {
     
-    // e.preventDefault();
+    e.preventDefault();
     handleAddNew()
     setTimeout(async () => {
         console.log("Final submission data:", submissionData)
@@ -168,6 +142,8 @@ const handleSubmit = async (e) => {
             }
         }, 500)
         }
+
+
 
 
     return (
