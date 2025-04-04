@@ -104,6 +104,12 @@
     height: auto;
     margin: 20px;
     font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+
   }
 
 
@@ -142,7 +148,7 @@
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
-    margin:0px 60px 0px 400px;
+    margin:0px 40px 0px 40px;
   }
 
   .rating {
@@ -154,7 +160,7 @@
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
-    margin:0px 60px 0px 400px;
+    margin:0px 40px 0px 40px;
   }
 
   .garbage {
@@ -166,11 +172,32 @@
     background-position: center;
     background-repeat: no-repeat;
     justify-content: center;
-    margin:0px 60px 0px 220px;
+    margin:0px 40px 0px 40px;
   }
 
   .pencil-garbage-wrapper
   {
     display:flex;
     justify-content: center;
+    align-content:space-between;
+
+  }
+
+  .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+   
+  }
+
+  .image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    object-fit: cover;
+   
+
+
   }

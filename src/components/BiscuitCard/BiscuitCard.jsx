@@ -44,8 +44,8 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
       <article className = 'card'>
       {isSingleBiscuitPage && (
     <div className ='biscuit-card-large'>
-<div className= "row">
-<img src={biscuit.image} alt={`picture of ${biscuit.name}`}></img>
+<div className= "box">
+<img src={biscuit.image} alt={`picture of ${biscuit.name}`} className='image' style={{padding: '20px', display:'flex',justifyContent:'center', flexDirection:'column',alignItems: 'center' }}></img>
 <div className= "details">
   <h2>{biscuit.name}</h2>
   <h2>description : {biscuit.description}</h2>
@@ -57,7 +57,7 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 
      {isHomepage && (
 
-<div className= "row">
+<div className= ".box">
 <img src={biscuit.image} alt={`picture of ${biscuit.name}`}></img>
 <div className= "details">
   <h2>{biscuit.name}</h2>
@@ -69,9 +69,9 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 {user?.id === biscuit.user && isSingleBiscuitPage && (
 <div className='pencil-garbage-wrapper'>
 <div className="garbage" onClick={handleDelete}></div>
-{/* <Link to={`/biscuits/${biscuit.id}/edit`}> 
+<Link to={`/biscuits/${biscuit.id}/edit`}> 
 <div className="pencil"></div>
-</Link> */}
+</Link>
 <Link to={`/biscuits/${biscuit.id}/rating`}> 
 <div className="rating"></div>
 </Link>      
