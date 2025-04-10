@@ -181,7 +181,7 @@ data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)),
 
 
 ## Bugs
-
+There is one bug in this app which I have not been able to fix yet. When you click submit on the biscuit ratings, you have to click twice for the rating to be submitted.
 
 ## Future Improvements
 In gthe future I would like to add pairings. So should which drink would pair well with each biscuit.
