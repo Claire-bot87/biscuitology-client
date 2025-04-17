@@ -57,15 +57,9 @@ setFormData({
     description: data.description,
     type: data.type,
     image: data.image,
-    taste: 
-    //data.taste ? [data.taste] :
-    [0], // Ensuring it's an array
-    texture:
-    //data.texture ? [data.texture] :
-    [0],
-    dunkability:
-    //data.dunkability ? [data.dunkability] :
-    [0],
+    taste: [0],
+    texture:[0],
+    dunkability:[0],
 })
 });
 }, [biscuitId, navigate, user])

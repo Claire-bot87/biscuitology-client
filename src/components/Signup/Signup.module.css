@@ -86,7 +86,6 @@
   }
 
   .image {
-    /* background-image: url(./giphy.gif); */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

@@ -15,7 +15,6 @@ const { user } = useContext(UserContext)
 useEffect(() => {
 biscuitIndex()
  .then(data => setBiscuits(data))
-//.then(data => console.log(data))
 
 .catch(err => console.log(err))
 }, [])

@@ -1,74 +1,81 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&display=swap');
 
 :root {
-    --text-primary: #ffffff;
-    --text-secondary: #cecece;
-    --background-primary:#ff66c4;
-    --background-secondary: #f26de1;
-    --background-tertiary: #ffaff4;
-    --border: #ff66c4;
-    --brand: #5e17eb;
-    --brand-hover: #fc73ee;
-    --brand-disabled: #b71782;
-    --error: #E74C3C;
+  --text-primary: #ffffff;
+  --text-secondary: #cecece;
+  --background-primary: #ff66c4;
+  --background-secondary: #f26de1;
+  --background-tertiary: #ffaff4;
+  --border: #ff66c4;
+  --brand: #5e17eb;
+  --brand-hover: #fc73ee;
+  --brand-disabled: #b71782;
+  --error: #E74C3C;
 }
 
 * {
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body {
-    background-color: var(--background-tertiary);
+  background-color: var(--background-tertiary);
 }
 
 
 main {
-    margin: 0;
-    background-color:var(--background-tertiary);
-    flex-grow: 1;
-    max-width: 100%;
-    margin: 0 auto;
+  margin: 0;
+  background-color: var(--background-tertiary);
+  flex-grow: 1;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 nav {
-    background-color: var(--background-tertiary);
+  background-color: var(--background-tertiary);
 }
 
 div {
-    background-color: var(--background-tertiary);
+  background-color: var(--background-tertiary);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    font-family: "Bebas Neue", sans-serif;
-    color:var(--text-primary)
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--text-primary)
 }
 
 
 html {
-    background-color: var(--background-tertiary);
+  background-color: var(--background-tertiary);
 }
 
-.site-name{
+.site-name {
 
-    color: white;
-}
-.tagline{
-
-    color: white;
+  color: white;
 }
 
-html, body, #root {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
+.tagline {
+
+  color: white;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .button {
   font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
@@ -81,307 +88,133 @@ html, body, #root {
   transition: background-color 0.3s ease;
   border-radius: 5px;
 }
+
 .button:hover {
   background-color: var(--brand-hover);
 }
+
 .button:disabled {
   background-color: var(--brand-disabled);
   cursor: not-allowed;
 }
+
 .tagline {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 22px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+}
 
-  }
+.sitename {
 
-  .sitename {
-  
-        background-image: url(./components/NavMenu/stickypopcorn.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 70px;
-        width:600px;
+  background-image: url(./components/NavMenu/stickypopcorn.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 600px;
 
-  }
+}
 
-  .container {
-    padding-left: 25rem;
-    padding-right: 25rem;
-    color: var(--text-secondary);
-    font-size: .9rem;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    margin: 0px 100px 0px 320px;
-    width:600px;
-  }
-  
-  .container h1 {
-    color: var(--text-primary);
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    justify-items: center;
+.container {
+  padding-left: 25rem;
+  padding-right: 25rem;
+  color: var(--text-secondary);
+  font-size: .9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 100px 0px 320px;
+  width: 600px;
+}
+
+.container h1 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  justify-items: center;
   text-align: center;
   font-size: 3rem;
-  }
+}
 
-  .container p {
-    text-align: center;
-  }
-  
-  .container div {
-    margin-bottom: 1rem;
-    background-color: var(--background-secondary);
-    border:none;
-  }
-  
-  .container div label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: .5rem;
-    color: white;
-  
-  }
-  
-  .container div input {
-    display: block;
-    width: 100%;
-    height: 35px;
-    border: 2px solid transparent;
-    padding: .5rem 1rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    background-color: var(--background-tertiary);
-    color: var(--text-primary);
-  }
-  
-  .container div input:hover {
-    border-color: var(--border);
-  }
-  
-  .container div input::placeholder {
-    color: var(--text-secondary);
-  }
-  
-  .container form button {
-    display: block;
-    width: 100%;
-    padding: .5rem 1rem;
-    
-    color: var(--text-primary);
-    border-radius: 8px;
-    border: none;
-    height: 35px;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  
-  .container form button:disabled {
-    background-color: var(--brand-disabled);
-  }
-  
-  .container form button:hover:not(:disabled) {
-    background-color: var(--brand-hover);
-    cursor: pointer;
-  }
+.container p {
+  text-align: center;
+}
 
-  .formcontrol {
-    margin: 0px, 100px, 0px, 100px;
-  
-  }
+.container div {
+  margin-bottom: 1rem;
+  background-color: var(--background-secondary);
+  border: none;
+}
 
-  .image {
-    /* background-image: url(./giphy.gif); */
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px;
-    height: 10rem;
-    margin: 0px, 100px, 0px, 100px;
-  }
-  
+.container div label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  color: white;
 
-  .button {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 18px;
-    color: var(--text-primary);
-    background-color: var(--brand);
-    border: none;
-    margin: 0.3rem;
-    padding: 0.3rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-  }
-  .button:hover {
-    background-color: var(--brand-hover);
-  }
-  .button:disabled {
-    background-color: var(--brand-disabled);
-    cursor: not-allowed;
-  }
+}
+
+.container div input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  border: 2px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+.container div input:hover {
+  border-color: var(--border);
+}
+
+.container div input::placeholder {
+  color: var(--text-secondary);
+}
+
+.container form button {
+  display: block;
+  width: 100%;
+  padding: .5rem 1rem;
+
+  color: var(--text-primary);
+  border-radius: 8px;
+  border: none;
+  height: 35px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.container form button:disabled {
+  background-color: var(--brand-disabled);
+}
+
+.container form button:hover:not(:disabled) {
+  background-color: var(--brand-hover);
+  cursor: pointer;
+}
+
+.formcontrol {
+  margin: 0px, 100px, 0px, 100px;
+
+}
+
+.image {
+  /* background-image: url(./giphy.gif); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  height: 10rem;
+  margin: 0px, 100px, 0px, 100px;
+}
 
 
-
-  :root {
-    --bg-primary: #1b1b1b;
-    --bg-secondary: #313131;
-    --bg-tertiary: #858585;
-    --bg-accent: #0085f230;
-    --bg-info: #0085f21a;
-    --text-primary: #fff;
-    --text-secondary: #cdcdcd;
-    --text-link: #8cb4ff;
-    --border-primary: #cdcdcd;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  html {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-primary);
-  }
-  
-  body {
-    margin: 0;
-    background-color: var(--bg-primary);
-  }
-  
-  #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  section {
-    margin: 0 0 2rem;
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .header img {
-    width: 40px;
-  }
-  
-  .header img:nth-last-of-type(1){
-    width: 25px;
-  }
-  
-  .header button {
-    background-color: transparent;
-    border-color: transparent;
-  }
-  
-  .header div {
-    margin-bottom: 3px;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-secondary);
-  }
-  
-  
-  .feed button {
-    border: none;
-    text-align: unset;
-    color: unset;
-    background: none;
-      color: inherit;
-      border: none;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
-      outline: inherit;
-  }
-  
-  .noPosts {
-    text-align: center;
-    margin: 2rem 0;
-  }
-  
-  .noPosts span {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    display: block;
-    font-weight: 800;
-  }
-  
-  .newPostButton {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: var(--brand);
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .biscuitContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
-    row-gap: 20px;
-    text-align: center;
-    margin: 0 20px;
-    align-items: start;
-  }
-
-  .topdiv {
-    height: 100px;
-    width:1000px
-  }
-
-
-  .form-control {
-    margin: 0px, 100px, 0px, 100px;
-  
-  }
-  .input::placeholder{
-  color:#5e17eb!important;
-  }
-
-  
-
-  .input{
-  color:#5e17eb!important;
-      }
-
-  .signup{
-        color:#5e17eb!important;
-            }
-
-
-  container-box{
-              display:flex;
-              justify-content: center;
-            }
-
-
-    .no-account-button{
-    font-family: "Bebas Neue", sans-serif;
+.button {
+  font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
   color: var(--text-primary);
   background-color: var(--brand);
@@ -391,4 +224,188 @@ html, body, #root {
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 5px;
-  } 
+}
+
+.button:hover {
+  background-color: var(--brand-hover);
+}
+
+.button:disabled {
+  background-color: var(--brand-disabled);
+  cursor: not-allowed;
+}
+
+
+
+:root {
+  --bg-primary: #1b1b1b;
+  --bg-secondary: #313131;
+  --bg-tertiary: #858585;
+  --bg-accent: #0085f230;
+  --bg-info: #0085f21a;
+  --text-primary: #fff;
+  --text-secondary: #cdcdcd;
+  --text-link: #8cb4ff;
+  --border-primary: #cdcdcd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+section {
+  margin: 0 0 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header img {
+  width: 40px;
+}
+
+.header img:nth-last-of-type(1) {
+  width: 25px;
+}
+
+.header button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.header div {
+  margin-bottom: 3px;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-secondary);
+}
+
+
+.feed button {
+  border: none;
+  text-align: unset;
+  color: unset;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.noPosts {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.noPosts span {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  display: block;
+  font-weight: 800;
+}
+
+.newPostButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--brand);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.biscuitContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  text-align: center;
+  margin: 0 20px;
+  align-items: start;
+}
+
+.topdiv {
+  height: 100px;
+  width: 1000px
+}
+
+
+.form-control {
+  margin: 0px, 100px, 0px, 100px;
+
+}
+
+.input::placeholder {
+  color: #5e17eb !important;
+}
+
+
+
+.input {
+  color: #5e17eb !important;
+}
+
+.signup {
+  color: #5e17eb !important;
+}
+
+
+container-box {
+  display: flex;
+  justify-content: center;
+}
+
+
+.no-account-button {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  color: var(--text-primary);
+  background-color: var(--brand);
+  border: none;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}

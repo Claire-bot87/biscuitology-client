@@ -58,13 +58,10 @@ setFormData({
     type: data.type,
     image: data.image,
     taste: 
-    //data.taste ? [data.taste] :
-    [0], // Ensuring it's an array
+    [0], 
     texture:
-    //data.texture ? [data.texture] :
     [0],
     dunkability:
-    //data.dunkability ? [data.dunkability] :
     [0],
 })
 });

@@ -8,7 +8,7 @@ Tooltip,
 Legend,
 ArcElement,
 } from 'chart.js'
-// import { pieChartData } from './Data.js'
+
 
 ChartJS.register(
     Tooltip,
@@ -29,51 +29,6 @@ export const PieChart = () => {
     })
     
 
-    // const handleSumRatings = async (e) => {
-    //     biscuitIndex()
-    //     .then((data) => {
-    //         biscuitArray =  data
-    //         console.log(`BISCUIT ARRAY IS ${biscuitArray}`)
-    //     })
-    //     }
-    
-    // useEffect(() => {
-    
-    //     biscuitIndex()
-        
-    //     // .then(data => data.json())
-    //     .then((data) => {
-            
-    //         console.log(`DATA FOR PIE CHART ${data}`)
-    //         data.map(item => {
-    //             let sum = 0; // Initialize sum to 0 for each item
-    //             item.dunkability.forEach(el => {
-    //                 sum += el; // Add each element in the dunkability array to sum
-                    
-    //             });
-    //             console.log(`SUM ${sum}`); // Log the sum for each item
-    //         })
-    //         const formattedData = {
-                
-    //             labels: data.map(item => item.name),
-    //             datasets:[{
-    //                 label:'your dataset',
-    //                 data: data.map(item => item.dunkability)
-    //                 ,
-                    
-    //                 backgroundColor: data.map((_, index) => colours[index % colours.length]),
-    //                 // backgroundColor: "rgba(75, 192, 192, 0.2)",
-    //                 borderColor: "rgba(75, 192, 192, 1)",
-    //                 borderWidth: 1,
-    //             },
-    //         ],
-            
-    //       };
-
-    //       setPieChartData(formattedData);
-    //     })
-    //     .catch((error) => console.error("Error fetching data:", error));
-    // }, []);
 
     useEffect(() => {
         biscuitIndex()

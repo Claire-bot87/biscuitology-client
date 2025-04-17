@@ -38,7 +38,6 @@ function DoughnutChart() {
                         labels: data.map(item => item.name),
                         datasets: [{
                             label: 'Taste Sum',
-                            // Calculate the sum of dunkability values for each item
                             data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)), 
                             backgroundColor: data.map((_, index) => colours[index % colours.length]),
                             borderColor: "rgba(75, 192, 192, 1)",
@@ -50,15 +49,7 @@ function DoughnutChart() {
                 })
                 .catch((error) => console.error("Error fetching data:", error));
         }, []);
-// const data = {
-//     labels: ['Yes','No'],
-//     datasets:[{
-//         label:'Poll',
-//         data:[3,6],
-//         backgroundColor:['black','red'],
-//         borderColor:['black','red']
-//     }]
-// }
+
 const options={}
 
     return (

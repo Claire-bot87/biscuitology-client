@@ -17,26 +17,6 @@ const [isLoading, setIsLoading] = useState(true)
  const navigate = useNavigate()
 
 
-
-//  useEffect(() => {
-
-//     async function getBiscuit(){
-//     try {
-//         const data = await biscuitShow(biscuitId)
-//         console.log('Fetched biscuit data:', data)
-//         setBiscuit(data)
-
-// } catch (error){
-// setError(error.response.data.message)
-
-// } finally {
-//     setIsLoading(false)
-
-
-//  }
-// getBiscuit()
-// }}, [biscuitId])
-
 useEffect(() => {
     console.log(`BISCUIT ID = ${biscuitId}`)
     async function getBiscuit(){
@@ -63,9 +43,6 @@ useEffect(() => {
      <div className='space'></div>
  
        { biscuit && <BiscuitCard biscuit={biscuit}/> }
-      
-
-    
       
         </>
 )

@@ -56,11 +56,6 @@ const CreateBiscuit = () => {
 
   }
 
-  // const fields = [
-  //     { name: 'taste', label: 'Taste', min: 1, max: 5 },
-  //     { name: 'texture', label: 'Texture', min: 1, max: 5 },
-  //     { name: 'dunkability', label: 'Dunkability', min: 1, max: 5 },
-  //   ]
 
   return (
 
@@ -115,24 +110,6 @@ const CreateBiscuit = () => {
           </textarea>
         </div>
 
-
-        {/* Dynamic Fields for Taste, Texture, Dunkability
-           {fields.map((field) => (
-          <div className='form-control' key={field.name}>
-            <label htmlFor={field.name}>{field.label}</label>
-            <input className ="input"
-              type='number'
-              placeholder='add rating'
-              name={field.name}
-              id={field.name}
-              min={field.min}
-              max={field.max}
-              value={formData[field.name]}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        ))} */}
 
         {/* image */}
         <ImageUpload

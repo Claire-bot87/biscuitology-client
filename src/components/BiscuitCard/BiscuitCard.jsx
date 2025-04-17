@@ -12,7 +12,6 @@ const BiscuitCard = ({ biscuit }) => {
   const location = useLocation()
   const { user } = useContext(UserContext)
   const navigate = useNavigate()
-  // const { biscuitId } = useParams()
 
 const isHomepage = location.pathname === '/'
 const isSingleBiscuitPage = location.pathname === `/biscuits/${biscuit.id}`
@@ -24,7 +23,6 @@ const handleDelete = async () => {
       console.log('BISCUIT ID IN HANDLE DELETE' + biscuit.id)
       await biscuitDelete(biscuit.id)
       navigate('/biscuits/')
-    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       // 
     }
@@ -40,7 +38,7 @@ console.log(`BISCUIT USER ID ${biscuit.user}`)
 console.log(`BISCUIT TYPE ${biscuit.type}`)
 
     return (
-      
+   
       <article className = 'card'>
       {isSingleBiscuitPage && (
     <div className ='biscuit-card-large'>
@@ -48,8 +46,8 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 <img src={biscuit.image} alt={`picture of ${biscuit.name}`} className='image' style={{padding: '20px', display:'flex',justifyContent:'center', flexDirection:'column',alignItems: 'center' }}></img>
 <div className= "details">
   <h2>{biscuit.name}</h2>
-  <h2>description : {biscuit.description}</h2>
-  <h2>category : {biscuit.type}</h2>
+  <p>description : {biscuit.description}</p>
+  <p>category : {biscuit.type}</p>
 </div>
 </div>
 </div>
@@ -57,7 +55,7 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 
      {isHomepage && (
 
-<div className= ".box">
+<div className= "box">
 <img src={biscuit.image} alt={`picture of ${biscuit.name}`}></img>
 <div className= "details">
   <h2>{biscuit.name}</h2>
@@ -75,7 +73,6 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 <Link to={`/biscuits/${biscuit.id}/rating`}> 
 <div className="rating"></div>
 </Link>      
-{/* <div className="garbage" onClick={handleDelete}></div> */}
 </div>
 )} 
 
@@ -85,9 +82,8 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 <div className='back'>
 </div>
 </Link>
- 
-
 )}
+
 {isHomepage && (
   <Link to={`/biscuits/${biscuit.id}`}>
   <div className='look'>
@@ -96,7 +92,7 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
 </Link> 
 )}
       </article>
-  
+
     )
   }
   

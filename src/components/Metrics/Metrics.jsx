@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './Metrics.css'
 
 export default function Metrics(){
 
@@ -18,10 +18,12 @@ export default function Metrics(){
         };
       
         return (
-          <div>
+          <div className='metrics-container'>
+          
+            <p>Biscuitology provides advanced analytics on the core features of a biscuit. Select a metric to take a deep dive into biscuitology.</p>
             <Dropdown onSelect={handleSelect}>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {selectedOption || 'Dropdown Button'}
+              <Dropdown.Toggle variant="info" id="dropdown-basic">
+                {selectedOption || 'Select metric'}
               </Dropdown.Toggle>
       
               <Dropdown.Menu>
@@ -34,6 +36,7 @@ export default function Metrics(){
             {selectedOption === 'Dunkability' &&  <PieChart/>}
             {selectedOption === 'Taste' &&  <DoughnutChart/>}
           </div>
+          
         );
       }
         

@@ -42,18 +42,3 @@ upload_preset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
     
 }
 
-// return(
-//     <div className='form-control'>
-//         <label htmlFor='name'>image</label>
-//         <textarea
-//         name='image'
-//         id='image'
-//         placeholder='add an image'
-//         value={formData.image}
-//         onChange={handleChange}
-//         required
-//         >
-
-//         </textarea>
-//         </div>
-// )

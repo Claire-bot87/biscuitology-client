@@ -12,7 +12,6 @@ Title,
 Tooltip,
 Legend,
 } from 'chart.js'
-// import { barChartData } from './Data.js'
 
 ChartJS.register(
     CategoryScale,
@@ -45,7 +44,6 @@ export const BarChart = () => {
                     labels: data.map(item => item.name),
                     datasets: [{
                         label: 'Dunkability Sum',
-                        // Calculate the sum of dunkability values for each item
                         data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)), 
                         backgroundColor: data.map((_, index) => colours[index % colours.length]),
                         borderColor: "rgba(75, 192, 192, 1)",

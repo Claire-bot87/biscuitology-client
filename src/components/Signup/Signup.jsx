@@ -1,15 +1,11 @@
 import {useState} from 'react'
-// import {useContext} from 'react'
 import { useNavigate} from 'react-router'
 import {signup} from '../../services/userService'
-// import {setToken} from '../../utils/auth'
-// import {getUserFromToken} from '../../utils/auth'
 import {UserContext} from '../../contexts/UserContext'
 
 
 import '../../App.css'
 export default function Signup() {
-    // const {setUser} = useContext(UserContext)
 
   const [formData, setFormData] = useState({
     username:'',
@@ -28,11 +24,8 @@ export default function Signup() {
         console.log('SIGNING UP')
         console.log((formData))
         try {
-            // const data = 
             await signup(formData)
            
-            //  setToken(data.token)
-            //  setUser(getUserFromToken())
             navigate('/signin')
         }catch(error){
             console.error(error)
@@ -113,7 +106,6 @@ return(
 
 
 <button 
-// disabled = {formData.password === '' || formData.password !== formData.confromPassword}
  type='submit'> Submit </button>
 
 
