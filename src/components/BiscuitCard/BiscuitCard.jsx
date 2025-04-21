@@ -42,7 +42,7 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
       <article className = 'card'>
       {isSingleBiscuitPage && (
     <div className ='biscuit-card-large'>
-<div className= "box">
+<div className= "single-biscuit-box">
 <img src={biscuit.image} alt={`picture of ${biscuit.name}`} className='image' style={{padding: '20px', display:'flex',justifyContent:'center', flexDirection:'column',alignItems: 'center' }}></img>
 <div className= "details">
   <h2>{biscuit.name}</h2>
@@ -56,7 +56,9 @@ console.log(`BISCUIT TYPE ${biscuit.type}`)
      {isHomepage && (
 
 <div className= "box">
+  <div className='image-box'>
 <img src={biscuit.image} alt={`picture of ${biscuit.name}`}></img>
+</div>
 <div className= "details">
   <h2>{biscuit.name}</h2>
 </div>
