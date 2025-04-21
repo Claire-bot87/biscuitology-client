@@ -21,3 +21,11 @@
         justify-content: center;
 }
 
+@media (max-width:480px) {
+
+.biscuitContainer{
+        display: flex;
+        flex-wrap: wrap;
+
+}
+}
