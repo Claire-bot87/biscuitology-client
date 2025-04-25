@@ -136,13 +136,14 @@ console.log(data)
 
 
 ## Challenges
+A challenge was including error messages in my sign up and sign in form. I missed the slass on error handling. But I did add that in, which really improves the user experience.
 
 
 ## Wins
 Adding metrics and graphs was a win in this project.
-Here i was setting state and state was an object, i wanted to update a particular property on the object.Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
+Here i was setting state and state was an object, I wanted to update a particular property on the object. Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
 
-So i:
+So I:
 Accessed the properties using dot notation
 Used the spread operator to copy the properties, avoiding mutations
 Checked that the property from the form data array had pulled through correctly using(if the biscuit hadn’t been rate yet , just use ‘0’)
@@ -179,9 +180,18 @@ data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)),
 
 ## Key Learnings
 
+I learned a lot of CSS for this project. And cemented my knowledge there. This included:
+- Learning how to optimise my app for mobile using media queries.
+- Improve the UX and the look and feel by adding some transitions. 
+- A better understanding and familiarity with Flexbox.
+
 
 ## Bugs
-There is one bug in this app which I have not been able to fix yet. When you click submit on the biscuit ratings, you have to click twice for the rating to be submitted.
+There are two bugs I want to fix:
+- When you click submit on the biscuit ratings, you have to click twice for the rating to be submitted. I believe this is related to the order in which the code is being executed. It is using an async function.
+
+- When adding a new biscuit and choosing the 'type' this should be a drop down, not a text field.
 
 ## Future Improvements
-In gthe future I would like to add pairings. So should which drink would pair well with each biscuit.
+In the future I would like to add pairings. This would show which drink would pair well with each biscuit.
+
