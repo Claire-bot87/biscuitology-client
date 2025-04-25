@@ -164,8 +164,8 @@ So I:
 So then I stored this in the database using a PUT request.
 So every biscuit array has an array of numbers on the dunkalibility property, for example. 
 
-So I used a PieChart to display the dunkability ratings. `so in my Piechart component , I needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then map through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one 1 number, by adding them together.
-The value in stored in ‘sum’,which starts at zero,  then you loop through and add the next value to ‘sum’.
+I used a PieChart to display the dunkability ratings. So in my Piechart component , I needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then mapped through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one number, by adding them together.
+The value is stored in ‘sum’,which starts at zero,  then you loop through and add the next value to ‘sum’.
 
 
 		
