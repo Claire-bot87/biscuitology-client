@@ -63,23 +63,23 @@ https://trello.com/b/ZW24K6LD/biscuitology
 
 ## Build Process
 
-First I built out the back end. I added: I added three applications in my project. They were 
--biscuits 
--pairings 
--users
+First, I built out the backend. I added three applications in my project. They were:
+- biscuits 
+- pairings 
+- users
 
-Then I added into each of these applications: 
+Then, I added into each of these applications: 
 - Models (for the schemas)
 - Views (handles the logic)
 - Urls (routing)
   
-Once I had completed these and tested them using Postman, I moved onto the front end. I created components , And placed them in my app.jsx file, which i imported into my Main.jsx file
-I created a UserContext using React's prebuilt createContext. The conext had a UserProvider which I wrapped around the whole app in mian .jsx. This menat that all the components had access to the user data, and so I would not need to pass the data down as props repeatedly in each component that required the user data.
-I also added BrowserRouter (a prebuilt component provided by react-router) which enavbeles client side routing throughout the app.
+Once I had completed these and tested them using Postman, I moved on to the frontend. I created components, and placed them in my App.jsx file, which I imported into my Main.jsx file.
+I created a UserContext using React's prebuilt createContext. The context had a UserProvider which I wrapped around the whole app in Main.jsx. This meant that all the components had access to the user data, and so I would not need to pass the data down as props repeatedly in each component that required the user data.
+I also added BrowserRouter (a prebuilt component provided by react-router) which enables client-side routing throughout the app.
 
 I enabled the user to add, delete and update a biscuit, ensuring my application had full CRUD functionality.
 
-Here is one in-depth example of that CRUD functionality. I have cjhosen just to focus of a POST request, for brevity:
+Here is one in-depth example of that CRUD functionality. I have chosen just to focus of a POST request, for brevity:
 
 ### Adding a biscuit: 
 
@@ -141,14 +141,14 @@ A challenge was including error messages in my sign up and sign in form. I misse
 
 ## Wins
 Adding metrics and graphs was a win in this project.
-Here i was setting state and state was an object, I wanted to update a particular property on the object. Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
+Here, I was setting state and state was an object, I wanted to update a particular property on the object. Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
 
 So I:
-Accessed the properties using dot notation
-Used the spread operator to copy the properties, avoiding mutations
-Checked that the property from the form data array had pulled through correctly using(if the biscuit hadn’t been rate yet , just use ‘0’)
-Then concatenated the two numbers with a comma.
-And wrapped it in straight brackets to create an array.
+- Accessed the properties using dot notation.
+- Used the spread operator to copy the properties, avoiding mutations.
+- Checked that the property from the formData array had pulled through correctly using a ternary operator (if the biscuit hadn’t been rated yet , just use ‘0’)
+- Then concatenated the two numbers with a comma.
+- And wrapped it in straight brackets to create an array.
 
 ``.js
     setSubmissionData({
@@ -164,7 +164,7 @@ And wrapped it in straight brackets to create an array.
 So then I stored this in the database using a PUT request.
 So every biscuit array has an array of numbers on the dunkalibility property, for example. 
 
-So I used a PieChart to display the dunkability ratings. `so in my Piechart component , i needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then map through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one 1 number, by adding them together.
+So I used a PieChart to display the dunkability ratings. `so in my Piechart component , I needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then map through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one 1 number, by adding them together.
 The value in stored in ‘sum’,which starts at zero,  then you loop through and add the next value to ‘sum’.
 
 
