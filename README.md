@@ -18,7 +18,7 @@
 * [Future Improvements](#future-improvements)
 
 # Description
-I did this project in the 12th and final week of the course. It was a full stack application. It had a Django backend and a React front end.  I chose to do a biscuit review site.
+I did this project in the 12th and final week of the course. It was a full stack application. It had a Django backend and a React frontend.  I chose to do a biscuit review site.
 
 ### Deployment Link 
 https://biscuitology.netlify.app/
@@ -46,13 +46,13 @@ I had one week to complete this project and I worked independently.
 
 
 ### Brief
-A full stack application 
-A django Back end and a react fron tend
-A user model and at least one other model. 
-A relationship between the iser model and one other model.
-Authentication. 
-Full CRUD functionality
-Styling.
+- A full stack application 
+- A Django backend and a ReactJS frontend
+- A user model and at least one other model
+- A relationship between the user model and one other model.
+- Authentication. 
+- Full CRUD functionality
+- Styling
 
 
 ## Planning
