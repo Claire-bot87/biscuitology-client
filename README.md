@@ -18,7 +18,7 @@
 * [Future Improvements](#future-improvements)
 
 # Description
-I did this project in the 12 and final week of the course. It was a full stack application. It had a Django backend and a React front end.  I chose to do a biscuit review site.
+I did this project in the 12th and final week of the course. It was a full stack application. It had a Django backend and a React front end.  I chose to do a biscuit review site.
 
 ### Deployment Link 
 https://biscuitology.netlify.app/
