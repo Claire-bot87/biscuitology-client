@@ -37,12 +37,12 @@ I had one week to complete this project and I worked independently.
 
 
 ### Technologies Used
-Django Rest Framework
-Python
-React
-GitHub
-Netlify
-Hiroku
+- Django Rest Framework
+- Python
+- React
+- GitHub
+- Netlify
+- Hiroku
 
 
 ### Brief
