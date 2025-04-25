@@ -150,7 +150,7 @@ So I:
 - Then concatenated the two numbers with a comma.
 - And wrapped it in straight brackets to create an array.
 
-``.js
+```.js
     setSubmissionData({
             name: formData.name,
             description: formData.description,
@@ -159,7 +159,7 @@ So I:
             taste: [...(data.taste ? data.taste : 0), ...formData.taste]
             texture: [...(data.texture ? data.texture : 0), ...formData.texture], // concatenate the array
             dunkability: [...(data.dunkability ? data.dunkability : 0), ...formData.dunkability], // concatenate the array
-``
+```
 
 So then I stored this in the database using a PUT request.
 So every biscuit array has an array of numbers on the dunkalibility property, for example. 
@@ -170,13 +170,13 @@ The value in stored in ‘sum’,which starts at zero,  then you loop through an
 
 		
 
-``.js
+```.js
 const formattedData = {
                     labels: data.map(item => item.name),
                     datasets: [{
                         label: 'Dunkability Sum',
 data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)),
-``
+```
 
 ## Key Learnings
 
