@@ -18,7 +18,7 @@
 * [Future Improvements](#future-improvements)
 
 # Description
-I did this project in the 12 and final week of the course. It was a full stack application. It had a Django backend and a React front end.  I chose to do a biscuit review site.
+I did this project in the 12th and final week of the course. It was a full stack application. It had a Django backend and a React frontend.  I chose to do a biscuit review site.
 
 ### Deployment Link 
 https://biscuitology.netlify.app/
@@ -37,22 +37,22 @@ I had one week to complete this project and I worked independently.
 
 
 ### Technologies Used
-Django Rest Framework
-Python
-React
-GitHub
-Netlify
-Hiroku
+- Django Rest Framework
+- Python
+- React
+- GitHub
+- Netlify
+- Hiroku
 
 
 ### Brief
-A full stack application 
-A django Back end and a react fron tend
-A user model and at least one other model. 
-A relationship between the iser model and one other model.
-Authentication. 
-Full CRUD functionality
-Styling.
+- A full stack application 
+- A Django backend and a ReactJS frontend
+- A user model and at least one other model
+- A relationship between the user model and one other model.
+- Authentication. 
+- Full CRUD functionality
+- Styling
 
 
 ## Planning
@@ -63,23 +63,23 @@ https://trello.com/b/ZW24K6LD/biscuitology
 
 ## Build Process
 
-First I built out the back end. I added: I added three applications in my project. They were 
--biscuits 
--pairings 
--users
+First, I built out the backend. I added three applications in my project. They were:
+- biscuits 
+- pairings 
+- users
 
-Then I added into each of these applications: 
+Then, I added into each of these applications: 
 - Models (for the schemas)
 - Views (handles the logic)
 - Urls (routing)
   
-Once I had completed these and tested them using Postman, I moved onto the front end. I created components , And placed them in my app.jsx file, which i imported into my Main.jsx file
-I created a UserContext using React's prebuilt createContext. The conext had a UserProvider which I wrapped around the whole app in mian .jsx. This menat that all the components had access to the user data, and so I would not need to pass the data down as props repeatedly in each component that required the user data.
-I also added BrowserRouter (a prebuilt component provided by react-router) which enavbeles client side routing throughout the app.
+Once I had completed these and tested them using Postman, I moved on to the frontend. I created components, and placed them in my App.jsx file, which I imported into my Main.jsx file.
+I created a UserContext using React's prebuilt createContext. The context had a UserProvider which I wrapped around the whole app in Main.jsx. This meant that all the components had access to the user data, and so I would not need to pass the data down as props repeatedly in each component that required the user data.
+I also added BrowserRouter (a prebuilt component provided by react-router) which enables client-side routing throughout the app.
 
 I enabled the user to add, delete and update a biscuit, ensuring my application had full CRUD functionality.
 
-Here is one in-depth example of that CRUD functionality. I have cjhosen just to focus of a POST request, for brevity:
+Here is one in-depth example of that CRUD functionality. I have chosen just to focus of a POST request, for brevity:
 
 ### Adding a biscuit: 
 
@@ -136,20 +136,21 @@ console.log(data)
 
 
 ## Challenges
+A challenge was including error messages in my sign up and sign in form. I missed the slass on error handling. But I did add that in, which really improves the user experience.
 
 
 ## Wins
 Adding metrics and graphs was a win in this project.
-Here i was setting state and state was an object, i wanted to update a particular property on the object.Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
+Here, I was setting state and state was an object, I wanted to update a particular property on the object. Until now, the value of that property was a number. I needed to use the values of two other properties from two other objects (both also numbers). I needed to join those two values together to make a string of numbers.
 
-So i:
-Accessed the properties using dot notation
-Used the spread operator to copy the properties, avoiding mutations
-Checked that the property from the form data array had pulled through correctly using(if the biscuit hadn’t been rate yet , just use ‘0’)
-Then concatenated the two numbers with a comma.
-And wrapped it in straight brackets to create an array.
+So I:
+- Accessed the properties using dot notation.
+- Used the spread operator to copy the properties, avoiding mutations.
+- Checked that the property from the formData array had pulled through correctly using a ternary operator (if the biscuit hadn’t been rated yet , just use ‘0’)
+- Then concatenated the two numbers with a comma.
+- And wrapped it in straight brackets to create an array.
 
-``.js
+```.js
     setSubmissionData({
             name: formData.name,
             description: formData.description,
@@ -158,30 +159,39 @@ And wrapped it in straight brackets to create an array.
             taste: [...(data.taste ? data.taste : 0), ...formData.taste]
             texture: [...(data.texture ? data.texture : 0), ...formData.texture], // concatenate the array
             dunkability: [...(data.dunkability ? data.dunkability : 0), ...formData.dunkability], // concatenate the array
-``
+```
 
 So then I stored this in the database using a PUT request.
 So every biscuit array has an array of numbers on the dunkalibility property, for example. 
 
-So I used a PieChart to display the dunkability ratings. `so in my Piechart component , i needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then map through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one 1 number, by adding them together.
-The value in stored in ‘sum’,which starts at zero,  then you loop through and add the next value to ‘sum’.
+I used a PieChart to display the dunkability ratings. So in my Piechart component , I needed to do a GET request to retrieve the data for each biscuit in the database, I then mapped through each object, accessed the dunkability key. I then mapped through each number in the array on the dunkability key and used the reduce() method  to reduce the array of numbers to one number, by adding them together.
+The value is stored in ‘sum’,which starts at zero,  then you loop through and add the next value to ‘sum’.
 
 
 		
 
-``.js
+```.js
 const formattedData = {
                     labels: data.map(item => item.name),
                     datasets: [{
                         label: 'Dunkability Sum',
 data: data.map(item => item.dunkability.reduce((sum, val) => sum + val, 0)),
-``
+```
 
 ## Key Learnings
 
+I learned a lot of CSS for this project. And cemented my knowledge there. This included:
+- Learning how to optimise my app for mobile using media queries.
+- Improve the UX and the look and feel by adding some transitions. 
+- A better understanding and familiarity with Flexbox.
+
 
 ## Bugs
-There is one bug in this app which I have not been able to fix yet. When you click submit on the biscuit ratings, you have to click twice for the rating to be submitted.
+There are two bugs I want to fix:
+- When you click submit on the biscuit ratings, you have to click twice for the rating to be submitted. I believe this is related to the order in which the code is being executed. It is using an async function.
+
+- When adding a new biscuit and choosing the 'type' this should be a drop down, not a text field.
 
 ## Future Improvements
-In gthe future I would like to add pairings. So should which drink would pair well with each biscuit.
+In the future I would like to add pairings. This would show which drink would pair well with each biscuit.
+
