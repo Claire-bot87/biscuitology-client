@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link} from 'react-router'
+import { useParams, useNavigate, Link } from 'react-router'
 import { biscuitShow } from '../../services/biscuitService'
 import BiscuitCard from '../BiscuitCard/BiscuitCard'
 import './SingleBiscuit.css'
